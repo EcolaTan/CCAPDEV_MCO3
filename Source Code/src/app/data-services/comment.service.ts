@@ -10,7 +10,7 @@ import { firstValueFrom } from 'rxjs';
     providedIn: 'root'
 })
 export class CommentService {
-    private readonly rootUrl = "https://ccpadev-mco3.onrender.com/"
+    private readonly rootUrl = "https://ccpadev-mco3.onrender.com"
 
     constructor(private http: HttpClient) {} //TODO add validators in a validator service
 
