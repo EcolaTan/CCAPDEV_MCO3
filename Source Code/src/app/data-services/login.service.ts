@@ -8,7 +8,7 @@ import { User } from '../data_types/user';
   providedIn: 'root'
 })
 export class LoginService {
-    private readonly rootUrl = "http://localhost:2000"
+    private readonly rootUrl = "https://ccpadev-mco3.onrender.com/"
 
     constructor(private http: HttpClient) { }
 

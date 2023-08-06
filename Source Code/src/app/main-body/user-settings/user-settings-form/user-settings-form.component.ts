@@ -68,7 +68,7 @@ export class UserSettingsFormComponent implements OnInit {
   
         const formData = new FormData();
         formData.append('file', file);
-        this.http.post(`http://localhost:2000/user/${this.activeUser._id}/settings/avatar`, formData).subscribe(response => {
+        this.http.post(`https://ccpadev-mco3.onrender.com//user/${this.activeUser._id}/settings/avatar`, formData).subscribe(response => {
         });
       }
     });
