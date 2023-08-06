@@ -385,11 +385,9 @@ app.get('/logout', async (req, res) => {
 //Edit user
 app.patch('/user/:user', async (req, res) => {
     try {
-        req.body.password = await bcrypt.hash(req.body.password, saltRounds)
         const data = await User.findByIdAndUpdate(req.params.user, req.body, {new: true})
         res.status(200).json(data)
     } catch(error) {
-        console.error(error)
         res.status(500).send()
     }
 })
