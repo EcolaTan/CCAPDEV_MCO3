@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class CommunityService {
-    private readonly rootUrl = "https://ccpadev-mco3.onrender.com"
+    private readonly rootUrl = "http://localhost:2000"
 
     constructor(private http: HttpClient) {}   
 

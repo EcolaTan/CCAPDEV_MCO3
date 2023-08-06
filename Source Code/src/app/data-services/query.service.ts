@@ -8,7 +8,7 @@ import { User } from '../data_types/user';
   providedIn: 'root'
 })
 export class QueryService {
-    private readonly rootUrl = "https://ccpadev-mco3.onrender.com"
+    private readonly rootUrl = "http://localhost:2000"
 
     constructor(private http: HttpClient) {}
 

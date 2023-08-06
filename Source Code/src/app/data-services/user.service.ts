@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
     providedIn: 'root'
 })
 export class UserService {
-    private readonly rootUrl = "https://ccpadev-mco3.onrender.com"
+    private readonly rootUrl = "http://localhost:2000"
     private activeUserSource = new BehaviorSubject<User | undefined>(undefined)
     activeUser = this.activeUserSource.asObservable()
 

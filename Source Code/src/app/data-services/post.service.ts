@@ -9,7 +9,7 @@ import { PostInfo } from '../data_types/postInfo';
   providedIn: 'root'
 })
 export class PostService {
-    private readonly rootUrl = "https://ccpadev-mco3.onrender.com"
+    private readonly rootUrl = "http://localhost:2000"
 
     constructor(private http: HttpClient) {}
 
