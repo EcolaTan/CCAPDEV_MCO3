@@ -1,0 +1,2 @@
+<input type="text" [(ngModel)]="query">
+<button id="search_button" [routerLink]="['/search', query, 1]" [disabled]="!query">Search</button>

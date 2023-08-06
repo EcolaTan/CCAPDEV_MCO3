@@ -1,0 +1,12 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--header_footer_bg_color);
+    color: var(--footer_text_color);
+    min-height: 50px;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    flex: 0 0 auto;
+}

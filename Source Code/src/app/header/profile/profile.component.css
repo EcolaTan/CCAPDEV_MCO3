@@ -1,0 +1,43 @@
+:host {
+    align-self: center;
+}
+
+#profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+#profile_pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    user-select: none;
+}
+
+#username {
+    display: flex;
+    color: var(--username_text_color);
+    user-select: none;
+    min-width: 100px;
+    justify-content: center;
+}
+
+#login {
+    padding-right: 20px;
+}
+
+#login_Button {
+    background-color: var(--login_button_bg_color);
+    color: var(--login_button_color);
+    font-family: 'Amaranth';
+    border-radius: 6px;
+    border: 0px;
+    padding: 5px 30px;
+}
+
+#login_Button:hover {
+    background-color: var(--login_button_hover_color);
+}

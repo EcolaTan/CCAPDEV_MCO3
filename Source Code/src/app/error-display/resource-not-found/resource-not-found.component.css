@@ -1,0 +1,8 @@
+:host {
+    display: flex;
+}
+
+:host > div {
+    align-items: center;
+    justify-content: center;
+}

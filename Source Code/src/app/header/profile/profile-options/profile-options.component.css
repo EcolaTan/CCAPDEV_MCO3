@@ -1,0 +1,26 @@
+#profile_options {
+    display: block;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    background-color: var(--profile_options_bg_color);
+    z-index: 1;
+    width: 125px;
+}
+
+#profile_options button{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: var(--profile_opt_button_bg_color);
+    text-align: left;
+    color: var(--profile_opt_button_color);
+    cursor: pointer;
+    font-size: small;
+    text-align: center;
+}
+
+#profile_options button:hover {
+    background-color: var(--profile_opt_button_hover_color);
+}

@@ -1,0 +1,7 @@
+<ng-template [ngIf]="activeUser">
+    <div id="profile_options">
+        <button id="profile_button" [routerLink]="['/view/user', activeUser._id]">User profile</button>
+        <button id="profile_settings_button" [routerLink]="['/user', activeUser._id, 'settings']">Profile settings</button>
+        <button id="logout" (click)="logout()">Log Out</button>
+    </div>
+</ng-template>

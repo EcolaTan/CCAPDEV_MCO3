@@ -1,0 +1,10 @@
+.login_box {
+    width: 50vh;
+    border-radius: 9px;
+    border: 3px ;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px var(--login_box_shadow_color);
+    margin: auto;
+    margin-top: 70px;
+}

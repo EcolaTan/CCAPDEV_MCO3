@@ -1,0 +1,24 @@
+<ng-template [ngIf]="logged_in && activeUser" [ngIfElse]="logged_out">
+    <div id="profile" #profile>
+        <ng-template [ngIf]="useDefault" [ngIfElse]="hasImage">
+            <img src="assets/UI Icons/recurve.png" id="profile_pic">
+        </ng-template>
+        <ng-template #hasImage>
+            <img src="assets/images/avatars/{{activeUser.icon}}" id="profile_pic" (error)="swapDefault()">
+        </ng-template>
+        
+        <p id="username">{{activeUser.name}}</p>
+    </div>
+</ng-template>
+
+<ng-template #logged_out>
+    <div id="login">
+        <button id="login_Button" (click)="open_login()">Log In</button>
+    </div>
+
+    <app-login-box [is_open]="login_modal_open" (closeEvent)="listenCloseEvent($event)" (loginSuccessEvent)="listenLoginSuccess($event)"></app-login-box>
+</ng-template>
+
+<ng-template [ngIf]="profile_actions_active" #profileOptions>
+    <app-profile-options (logoutEvent)="listenLogoutEvent($event)"></app-profile-options>
+</ng-template>

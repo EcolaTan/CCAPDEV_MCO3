@@ -1,0 +1,19 @@
+<dialog id="login_Modal" class="modal" [open]="is_open">
+    <div class="login_box">
+        <span class="close" (click)="close_modal()">&times;</span>
+        <form id="login_Form" [formGroup]="login_info" (submit)="submit()">
+            <h2>Login</h2>  
+            <input type="text" id="login_username" formControlName="userId" placeholder="Username" required>
+            <input type="password" id="login_password" formControlName="password" placeholder="Password" required>
+            <div id="check">
+                <input type="checkbox" value="lsRemember" id="remember_Me" formControlName="rememberFlag">
+                <label for="remember_Me">Remember me</label>
+            </div>
+            <input type="submit" value="submit">
+        </form>
+        
+        <div id="sign_instead">
+            <span>Do not have an account?</span><a id ="signin_link" [routerLink]="['/signup']">Sign up</a> 
+        </div>
+    </div>
+</dialog>
