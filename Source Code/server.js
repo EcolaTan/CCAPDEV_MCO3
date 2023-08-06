@@ -93,7 +93,7 @@ app.get('/getUserCommentCount/:user', async (req, res) => {
 app.get('/comment/user/:user/:page', async (req, res) => {
     try {
         const data = await Comment.find({poster: req.params.user})
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('replies')
             .populate('parentPostId')
             .populate('parentCommunity')
