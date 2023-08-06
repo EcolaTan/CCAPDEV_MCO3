@@ -1,0 +1,9 @@
+:host {
+    font-family: 'Amaranth';    
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

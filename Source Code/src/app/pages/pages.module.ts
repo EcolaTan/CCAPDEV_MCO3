@@ -14,6 +14,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SignupPageFormsModule } from '../main-body/signup-page-forms/signup-page-forms.module';
 import { UserProfileSectionsModule } from '../main-body/user-profile-sections/user-profile-sections.module';
 import { ErrorDisplayModule } from '../error-display/error-display.module';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ErrorDisplayModule } from '../error-display/error-display.module';
         SignupPageComponent,
         UserProfilePageComponent,
         ViewPostPageComponent,
+        AboutPageComponent,
     ],
     imports: [
         CommonModule,

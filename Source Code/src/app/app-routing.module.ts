@@ -7,6 +7,7 @@ import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
 import { ViewPostPageComponent } from './pages/view-post-page/view-post-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,10 @@ const routes: Routes = [
     {
         path: "home/:page",
         component: HomepageComponent
+    },
+    {
+        path: "about/RecurveSpecs",
+        component: AboutPageComponent
     },
     {
         path: "home",
