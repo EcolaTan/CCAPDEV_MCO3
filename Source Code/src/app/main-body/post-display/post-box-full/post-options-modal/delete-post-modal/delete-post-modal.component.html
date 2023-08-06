@@ -1,0 +1,7 @@
+<dialog id="delete_modal" class="modal" [open] = "is_open">
+    <div class="user_box">
+        <span class="close" (click)="close_modal()">&times;</span>
+        <h1>Are you sure you want to delete this post?</h1>
+        <input [routerLink]="['/']" type="submit" class="close" id="delete" value="Delete" (click)="delete_post($event)">
+    </div>
+</dialog>

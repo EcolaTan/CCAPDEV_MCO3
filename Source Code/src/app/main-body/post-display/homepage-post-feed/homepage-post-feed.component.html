@@ -1,0 +1,8 @@
+<app-sorting-box (sortEvent)="relaySortEvent($event)"></app-sorting-box>
+<div *ngFor="let post of posts">
+    <app-post-box-summary [post]="post" [routerLink]="['/community', post.community._id, 'view', post._id]"></app-post-box-summary>
+</div>
+<div class="buttonBox">
+    <button *ngIf="page > 1" (click)="goBack()">Prev</button>
+    <button *ngIf="page * 15 < count" (click)="goNext()">Next</button>
+</div>

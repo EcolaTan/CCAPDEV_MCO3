@@ -1,0 +1,36 @@
+<div [id]="post._id" class="post">
+    <div class="post_body">
+        <div class="post_info">
+            <img class="com_dp" src="assets/Community Icons/{{post.community.icon}}">
+            <p class="post_community" [routerLink]="['/community', post.community.name, 1]">{{post.community._id}}</p>
+            <div>| posted by</div>
+            <p [ngClass] ="{'stretch_hor':!post.edited}" class="post_author"[routerLink]="['/view/user', post.poster._id]">{{post.poster.name}}</p>
+            <ng-template [ngIf]="post.edited">
+                <div id="edited_tag" class="stretch_hor">(edited)</div>
+            </ng-template>
+            <p class="post_date">posted on {{formattedDate}}</p>
+            <div *ngIf="activeUser">
+                <div #postOptionsButton *ngIf="post.poster._id == activeUser._id">
+                    <button class="post_options_button"></button>
+                    <ng-template [ngIf]="post_options_active" #postOptions>
+                        <app-post-options-modal #postOptionsModal [post]="post" (closeEvent)="listenCloseEvent($event)" (editEvent)="listenEditEvent($event)"></app-post-options-modal>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+
+        <div class="post_content">
+            <h1 class="post_title">{{post.title}}</h1>
+            <p class="post_text">{{post.body}}</p>
+        </div>
+    </div>
+
+    <div class="post_actions">
+        <input type="radio" class="upvote viewed_post" name="Post:{{post._id}}:reactions" value="1" (click)="upvote()" [checked]="vote === 1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="upvote_num">{{post.upvotes}}</div>
+        <input type="radio" class="downvote viewed_post" name="Post:{{post._id}}:reactions" value="-1" (click)="downvote()" [checked]="vote === -1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="downvote_num">{{post.downvotes}}</div>
+        <img class="comments">
+        <div>{{post.comments}}</div>
+    </div>
+</div>

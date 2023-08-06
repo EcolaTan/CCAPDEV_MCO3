@@ -1,0 +1,13 @@
+<form id="signupForm" [formGroup]="signupInfo" (submit)="submit($event)">
+    <h2>Sign Up</h2>  
+    <input type="text" id="sign_username" formControlName="sign_username" placeholder="Username" required>
+    <input type="password" id="sign_password" formControlName="sign_password" placeholder="Password" required>
+    <input type="password" id="confirm_password" formControlName="confirm_password" placeholder="Confirm Password" required>
+    <input type="submit" value="Sign up">
+
+    <div id="login_instead">
+        <p><span>Already have an account?</span><span id="login_link" (click)="swap()">Login</span></p>
+        <br>
+        <span>Login as guest</span><a id="login_link" [routerLink]="['']">Continue</a> 
+    </div>
+</form>

@@ -1,0 +1,11 @@
+<dialog id="edit_modal" class="modal" [open]="is_open">
+    <div class="user_box">
+        <span class="close" (click)="close_modal()">&times;</span>
+        <form [formGroup]="edit_post" (submit) = "edit_post_submit($event)" id="edit_sheet">
+            <label>Edit Post</label>
+            <input type="text" id="edit_title_input" formControlName="title" placeholder="{{post.title}}" value="{{post.title}}">
+            <input type="text" id="edit_body_input" formControlName="body" placeholder="{{post.body}}" value="{{post.body}}">
+            <input type="submit" class="close" value="Edit">
+        </form>
+    </div>
+</dialog>

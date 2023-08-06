@@ -1,0 +1,29 @@
+.upvote, .downvote {
+    height: 20px;
+    width: 20px;
+    appearance: none;
+}
+
+.upvote {
+    content: url("../../../assets/UI Icons/upvote.png");
+ }
+
+.upvote:hover {
+    content: url("../../../assets/UI Icons/upvote_hover.png");
+}
+
+.upvote:checked {
+    content: url("../../../assets/UI Icons/upvote_hover.png");
+} 
+
+.downvote {
+    content: url("../../../assets/UI Icons/downvote.png");
+}
+
+.downvote:hover {
+    content: url("../../../assets/UI Icons/downvote_hover.png");
+}
+
+.downvote:checked {
+    content: url("../../../assets/UI Icons/downvote_hover.png");
+}

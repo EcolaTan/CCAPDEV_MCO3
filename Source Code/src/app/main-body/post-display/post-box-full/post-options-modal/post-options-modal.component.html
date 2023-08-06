@@ -1,0 +1,6 @@
+<div class="post_options">
+    <button class="edit_post" (click)="open_edit_post()">Edit Post</button>
+    <app-edit-post-modal [is_open]="edit_post_modal_open" [post] = "post" (closeEvent)="listenCloseEvent($event)" (editEvent)="listenEditEvent($event)"></app-edit-post-modal>
+    <button class="delete_post" (click)="open_delete_post()">Delete Post</button>
+    <app-delete-post-modal [is_open]="delete_post_modal_open" [post] = "post" (closeEvent)="listenCloseEvent($event)"></app-delete-post-modal>
+</div>

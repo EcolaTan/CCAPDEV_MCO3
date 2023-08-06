@@ -1,0 +1,17 @@
+#delete_modal .user_box{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+#delete_modal h1 {
+    text-align: center
+}
+
+#delete_notice{
+    margin-top: 100px;
+    color: var(--stat_asset_color);
+    font-size: 1.25rem;
+}

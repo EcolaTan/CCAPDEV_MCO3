@@ -1,0 +1,21 @@
+#edit_modal .user_box,
+#edit_comment_modal .user_box{
+    min-width: 750px;
+    overflow-y: auto;
+}
+
+#edit_sheet {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    padding: 50px;
+}
+
+#edit_title_input, #edit_body_input, #edit_comment_body_input{
+    padding: 10px 20px;
+    background-color: var(--text_input_bg_color);
+    height: 5vh;
+    border-radius: 9px;
+    border-width: 0;
+    user-select: none;
+}

@@ -1,0 +1,25 @@
+<div [id]="post._id" class="post">
+    <div class="post_body">
+        <div class="post_info">
+            <img class="com_dp" src="assets/Community Icons/{{post.community.icon}}">
+            <p class="post_community" [routerLink]="['/community', post.community._id, 1]">{{post.community.name}}</p>
+            <div>| posted by</div>
+            <p class="post_author stretch_hor" [routerLink]="['/view/user', post.poster._id]">@{{post.poster.name}}</p>
+            <p class="post_date">{{formattedDate}}</p>
+        </div>
+
+        <div class="fade post_content">
+            <h1 class="post_title">{{post.title}}</h1>
+            <p class="post_text">{{post.body}}</p>
+        </div>
+    </div>
+
+    <div class="post_actions">
+        <input type="radio" class="upvote" name="Post:{{post._id}}:reactions" value="1" (click)="upvote()" [checked]="vote === 1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="upvote_num">{{post.upvotes}}</div>
+        <input type="radio" class="downvote" name="Post:{{post._id}}:reactions" value="-1" (click)="downvote()" [checked]="vote === -1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="downvote_num">{{post.downvotes}}</div>
+        <img class="comments" src="assets/UI Icons/comments.png">
+        <div>{{post.comments}}</div>
+    </div>
+</div>

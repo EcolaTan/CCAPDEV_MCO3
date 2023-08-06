@@ -1,0 +1,4 @@
+<ng-template [ngIf]="loadedPost && commentList">
+    <app-post-box-full [post]="loadedPost"></app-post-box-full>
+    <app-comment-section [community]="community" [post]= "loadedPost"  [comment_list]="commentList"></app-comment-section>
+</ng-template>

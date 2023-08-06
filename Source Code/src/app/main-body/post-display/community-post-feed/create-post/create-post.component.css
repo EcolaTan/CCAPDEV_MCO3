@@ -1,0 +1,8 @@
+#create_post {
+    border: solid;
+    flex: 0 0 200px;
+    min-width: 350px;
+    width: 40vw;
+    margin: 10px;
+    border-radius: 10px;
+}
