@@ -351,15 +351,19 @@ app.post('/user', async (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         const data = await User.findById(req.body.userId, {password: 1})
-        const loginSuccess = await bcrypt.compare(req.body.password, data.password)
 
-        if(loginSuccess) {            
-            req.session.username = data._id
-            if(req.body.rememberFlag === true) {
-                req.session.cookie.maxAge = max_age
+        if(data !== null) {
+            const loginSuccess = await bcrypt.compare(req.body.password, data.password)
+            if(loginSuccess) {            
+                req.session.username = data._id
+                if(req.body.rememberFlag === true) {
+                    req.session.cookie.maxAge = max_age
+                }
+                
+                res.status(200).json(data._id)
+            } else {
+                res.status(200).json("")
             }
-            
-            res.status(200).json(data._id)
         } else {
             res.status(200).json("")
         }
