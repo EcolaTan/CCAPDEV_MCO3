@@ -2,10 +2,10 @@
     <div class="banner">
         <div class="overlay">
             <ng-template [ngIf]="useDefault" [ngIfElse]="hasImage">
-                <img src="assets/UI Icons/recurve.png" id="profile_pic">
+                <img src="assets/UI Icons/recurve.png">
             </ng-template>
             <ng-template #hasImage>
-                <img src="assets/images/avatars/{{loadedUser.icon}}" id="profile_pic" (error)="swapDefault()">
+                <img src="assets/images/avatars/{{loadedUser.icon}}" (error)="swapDefault()">
             </ng-template>
         </div>
     </div>
