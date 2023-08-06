@@ -47,6 +47,7 @@ mongoose.connect(mongo)
     .then(async () => {
         console.log('Connected to MongoDB!')
         const indices = await Counter.findOne({})
+        console.log(indices)
         indexerId = indices._id
         commentIndex = indices.commentIndex
         postIndex = indices.postIndex
