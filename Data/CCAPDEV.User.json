@@ -19,11 +19,11 @@
   }
 },
 {
-  "_id": "animoArchier",
+  "_id": "animoArcher",
   "name": "archie",
   "password": "accesscode",
   "about": "id 119, bs ie-it. hmu, let's be friends!",
-  "icon": "AnimoArchers.png",
+  "icon": "AnimoArcher.png",
   "joinDate": {
     "$date": "2021-11-02T00:00:00.000Z"
   }
