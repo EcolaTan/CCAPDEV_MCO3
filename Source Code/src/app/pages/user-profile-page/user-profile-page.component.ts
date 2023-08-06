@@ -27,32 +27,32 @@ export class UserProfilePageComponent implements OnInit {
     ngOnInit() {
         this.route.paramMap.subscribe((params) => {
             this.userId = params.get('username')!
+
+            this.userServices.getUser(this.userId)?.subscribe((data) => [
+                this.loadedUser = data
+            ])
+    
+            this.postService.getUserPosts(this.userId, 1).subscribe((data) => {
+                this.postList = data
+            })
+    
+            this.commentService.getUserComments(this.userId, 1).subscribe((data) => {
+                this.commentList = data
+            })
+    
+            this.commentService.getCountUserComments(this.userId).subscribe((data) => {
+                this.commentCount = data
+            })
+    
+            this.postService.getUserPostCount(this.userId).subscribe((data) => {
+                this.postCount = data
+            })
         })
-
-        this.userServices.getUser(this.userId)?.subscribe((data) => [
-            this.loadedUser = data
-        ])
-
+        
         this.userServices.sessionManager()
 
         this.userServices.activeUser.subscribe((user) => {
             this.activeUser = user
-        })
-
-        this.postService.getUserPosts(this.userId, 1).subscribe((data) => {
-            this.postList = data
-        })
-
-        this.commentService.getUserComments(this.userId, 1).subscribe((data) => {
-            this.commentList = data
-        })
-
-        this.commentService.getCountUserComments(this.userId).subscribe((data) => {
-            this.commentCount = data
-        })
-
-        this.postService.getUserPostCount(this.userId).subscribe((data) => {
-            this.postCount = data
         })
     }
 
