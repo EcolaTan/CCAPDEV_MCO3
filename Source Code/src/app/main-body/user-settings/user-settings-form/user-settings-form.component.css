@@ -1,0 +1,133 @@
+#user_settings {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    width: 45%;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#customize_text {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--newCommunityTheme-bodyText);
+}
+
+.inform_text span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--newCommunityTheme-line);
+    color: var(--newCommunityTheme-metaText);
+    margin-bottom: 32px;
+    padding-bottom: 6px;
+}
+
+#user_setting_form input[type="text"] {
+    width: 100%;
+}
+
+.setting_description {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(58, 58, 58, 0.637);
+}
+
+#user_setting_form textarea {
+    width: 100%;
+    resize: none;
+}
+
+.word_counter {
+    color: rgba(24, 24, 24, 0.637);
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+#password_box {
+    display: flex;
+    flex-direction: row;
+}
+
+#password_box button {
+    margin-left: auto;
+    order: 2;
+    display: block;
+    width: 20%;
+    padding: 8px;
+    border-radius: 12px;
+    border: none;
+    text-align: left;
+    background-color: var(--login_button_bg_color);
+    color: var(--login_button_color);
+    cursor: pointer;
+    font-size: medium;
+    text-align: center;
+}
+
+#confirmation_box {
+    display: flex;
+    gap: 30px;
+    margin: auto;
+}
+
+#confirmation_box #cancel {
+    background-color: rgb(206, 41, 41);
+}
+
+#confirmation_box #cancel:hover {
+    background-color: rgb(255, 50, 50);
+}
+
+#image_container {
+    padding-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+#avatar_container {
+    cursor: pointer;
+}
+
+#avatar_image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#banner_image {
+    height: 150px;
+    width: 300px;
+}
+
+#avatar_image,
+#banner_image {
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    #image_container {
+        flex-direction: column;
+    }
+
+    #banner_image {
+        width: 100%;
+    }
+
+    #password_box {
+        flex-direction: column;
+    }
+
+    #password_box button {
+        margin: auto;
+        width: 80%;
+    }
+}

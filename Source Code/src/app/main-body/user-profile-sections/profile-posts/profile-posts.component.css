@@ -1,0 +1,11 @@
+#main_content {
+    display: flex;
+    flex-direction: column;
+    flex: 8 8 0;
+    align-items: center;
+}
+
+.buttonBox {
+    display: flex;
+    justify-content: space-evenly;
+}

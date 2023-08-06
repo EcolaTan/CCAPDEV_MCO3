@@ -1,0 +1,63 @@
+<ng-template [ngIf]="activeUser" [ngIfElse]="error">
+    <form id="user_setting_form" [formGroup]="settings" (submit)="onSubmit($event)">
+        <div id="user_settings">
+            <div id="customize_text">
+                <p>Customize Profile</p>
+            </div>
+    
+            <div class="inform_text">
+                <span>Security</span>
+                <hr />
+            </div>
+    
+            <div class="display_setting" id="password_box">
+                <div>
+                <span>Password</span><br />
+                <span class="setting_description">Choose another password for your account</span>
+                <br />
+                </div>
+                <button type="button" id="password_change_Button" (click)="togglePasswordModal()">Change</button>
+    
+                <app-password-modal [is_open]="password_modal_open" (closeEvent)="listenCloseEvent($event)"></app-password-modal>
+            </div>
+    
+            <div class="inform_text">
+                <span>Profile Information</span>
+                <hr />
+            </div>
+    
+            <div class="display_setting">
+                <span>Display Name (optional)</span><br />
+                <span class="setting_description">Change your display name; this is not your username</span>
+                <input type="text" id="display_name" formControlName="display_name" placeholder="Display name (optional)" maxlength="30" />
+                <span class="word_counter" id="display_name_count">{{display_name_counter}} Characters remaining</span>
+            </div>
+    
+            <div class="display_setting">
+                <span>About (optional)</span><br />
+                <span class="setting_description">Tell us a brief description of yourself</span>
+                <br />
+                <textarea rows="10" id="About_text" formControlName="about" form="user_setting_form" maxlength="200"></textarea>
+                <span class="word_counter" id="display_about_count">{{about_counter}} Characters remaining</span>
+            </div>
+    
+            <div class="display_setting">
+                <span>Profile Picture/Banner</span><br />
+                <span class="setting_description">Add personality to your profile with a background and photo</span>
+                <div id="image_container">
+                <div id="avatar_container" (click)="onAvatarContainerClick()">
+                    <img id="avatar_image" [src]="avatarImageSrc" alt="Avatar" />
+                </div>
+                </div>
+            </div>
+            
+            <div id="confirmation_box">
+                <input type="submit" value="submit" />
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #error>
+    <app-unauthorized></app-unauthorized>
+</ng-template>

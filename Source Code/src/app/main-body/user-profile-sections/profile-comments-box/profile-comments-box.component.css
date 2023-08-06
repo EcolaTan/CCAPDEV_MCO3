@@ -1,0 +1,131 @@
+.comment {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.comment_info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment_avatar, .reply_avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment_author, .reply_author {
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline;
+}
+
+.comment_content, .reply_content > p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 40px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.comment_actions, .reply_actions {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.comment_actions, .reply_actions > div {
+    color: var(--stat_asset_color);
+    font-size: 0.85rem;
+}
+
+.comment_options_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 17px;
+    height: 17px;
+    background-image: url("../../../../assets/UI Icons/more.png");
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.comment_options_button:hover {
+    background-image: url("../../../../assets/UI Icons/more_hover.png");
+}
+
+.comment_options {
+    display: none;
+    outline: solid 3px var(--border_color);
+    border-radius: 10px;
+    max-height: 100px;
+    align-self: flex-start;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 1;
+}
+
+.comment_options > button{
+    width: 150px;
+    height: 50px;
+    display: block;
+    background-color: whitesmoke;
+    border-radius: 1px;
+    cursor: pointer;
+    border: 0px;
+    text-align: left;
+    font-size: 0.8rem;
+    padding: 10px;
+    padding-right: 20px;
+    z-index: 1;
+}
+
+.comment_options > button:hover{
+    background-color: var(--border_color);
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    appearance: none;
+}
+
+.upvote {
+    content: url("../../../../assets/UI Icons/upvote.png");
+ }
+
+.upvote:hover {
+    content: url("../../../../assets/UI Icons/upvote_hover.png");
+}
+
+.upvote:checked {
+    content: url("../../../../assets/UI Icons/upvote_hover.png");
+} 
+
+.downvote {
+    content: url("../../../../assets/UI Icons/downvote.png");
+}
+
+.downvote:hover {
+    content: url("../../../../assets/UI Icons/downvote_hover.png");
+}
+
+.downvote:checked {
+    content: url("../../../../assets/UI Icons/downvote_hover.png");
+}

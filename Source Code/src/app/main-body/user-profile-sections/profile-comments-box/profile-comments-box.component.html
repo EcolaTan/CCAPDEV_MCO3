@@ -1,0 +1,23 @@
+<div class="comment">
+    <div class="comment_info">
+        <ng-template [ngIf]="useDefault" [ngIfElse]="hasImage">
+            <img src="assets/UI Icons/recurve.png" id="profile_pic">
+        </ng-template>
+        <ng-template #hasImage>
+            <img src="assets/images/avatars/{{comment.poster.icon}}" id="profile_pic" (error)="swapDefault()">
+        </ng-template>
+        
+        <div class="comment_author">{{comment.poster.name}}</div>
+    </div>
+
+    <div class="comment_content">
+        <p>{{comment.text}}</p>
+    </div>
+
+    <div class="comment_actions">
+        <input type="radio" class="upvote" name="Comment:{{comment._id}}:reactions" value="1" (click)="upvote()" [checked]="vote === 1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="upvote_num">{{comment.upvotes}}</div>
+        <input type="radio" class="downvote" name="Comment:{{comment._id}}:reactions" value="-1" (click)="downvote()" [checked]="vote === -1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="downvote_num">{{comment.downvotes}}</div>
+    </div>
+</div>
