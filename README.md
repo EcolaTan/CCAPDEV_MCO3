@@ -1,5 +1,13 @@
 # CCAPDEV
-This is the repository for the CCAPDEV project MCO3. 
+This is the repository for the CCAPDEV project MCO3. The project uses MongoDB, Express, Angular, and NodeJS. Alongside this, the project also uses the following packages:
+  1. dotenv
+  2. express
+  3. mongoose
+  4. express-session
+  5. connect-mongo
+  6. bcrypt
+  7. multer
+  8. cors
 
 To run the application locally follow the following steps:
   1. Download the local branch of the repository.
