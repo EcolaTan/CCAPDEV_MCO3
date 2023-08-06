@@ -1,0 +1,9 @@
+<dialog id="community_about_modal" class="modal" [open]="is_open">
+    <div class="user_box" id = 'community_about_box'>
+        <span class="close" (click)="close_modal()">&times;</span>
+        <div class="community_about_content">
+            <h2>Community Info</h2>
+            <p>{{activeCommunity.about}}</p>
+        </div>
+    </div>
+</dialog>

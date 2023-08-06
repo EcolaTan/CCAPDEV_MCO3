@@ -1,0 +1,48 @@
+<div class="comment" [ngStyle]="style" *ngIf="comment">
+    <div class="comment_info" (click)="goToUserProfile()">
+        <ng-template [ngIf]="useDefault" [ngIfElse]="hasImage">
+            <img src="assets/UI Icons/recurve.png" id="profile_pic">
+        </ng-template>
+        <ng-template #hasImage>
+            <img src="assets/images/avatars/{{comment.poster.icon}}" id="profile_pic" (error)="swapDefault()">
+        </ng-template>
+
+        <div class="comment_author">{{comment.poster.name}}</div>
+        <ng-template [ngIf]="comment.edited">
+            <div id="edited_tag">(edited)</div>
+        </ng-template>
+    </div>
+
+    <div class="comment_content">
+        <p>{{comment.text}}</p>
+    </div>
+
+    <div class="comment_actions">
+        <input type="radio" class="upvote" name="Comment:{{comment._id}}:reactions" value="1" (click)="upvote()" [checked]="vote === 1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="upvote_num">{{comment.upvotes}}</div>
+        <input type="radio" class="downvote" name="Comment:{{comment._id}}:reactions" value="-1" (click)="downvote()" [checked]="vote === -1 && activeUser !== undefined" [disabled]="activeUser === undefined">
+        <div class="downvote_num">{{comment.downvotes}}</div>
+        <button class="reply_button" *ngIf="activeUser" (click) = "open_reply_modal()">Reply</button>
+        <app-reply-modal [activeUser] = "activeUser" [is_open]="reply_modal_open" (closeEvent)="listenCloseEvent($event)" [comment_parent]="comment"></app-reply-modal>
+        <ng-template [ngIf]="activeUser">
+            <div *ngIf="comment.poster._id === activeUser._id">
+                <button  class="comment_options_button" (click)="show()"></button>
+                <ng-template [ngIf] = "comment_options_active">
+                    <app-comment-options-modal [comment]="comment" (close)="listenOptionClose($event)" (editEvent)="listenEditEvent($event)" (deleteEvent)="listenDeleteEvent($event)"></app-comment-options-modal>
+                </ng-template>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<ng-template [ngIf]="comment">
+    <ng-template [ngIf]="effective_layer + 1 <= 3">
+        <div *ngFor="let reply of comment.replies">
+            <app-comment-box [level]="level" [comment]="reply" (deleteRelay)="listenChaining($event)" (viewEvent)="viewChainer($event)"></app-comment-box>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="effective_layer === 3 && comment.replies.length > 0">
+        <button (click)="viewMore()">View more</button>
+    </ng-template>
+</ng-template>

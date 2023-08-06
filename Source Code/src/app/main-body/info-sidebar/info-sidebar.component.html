@@ -1,0 +1,11 @@
+<ng-template [ngIf]="community">
+    <button class="community_about_button" id = "community_about_button" (click)="open_about()">
+        <p>About</p>
+    </button>
+    <app-about-modal [activeCommunity]="community" [is_open]="about_modal_open" (closeEvent)="listenCloseEvent($event)"></app-about-modal>
+    <button class="community_about_button" id = "community_rule_button" (click)="open_rules()">
+        <p>Rules</p>
+    </button>
+    <app-rule-modal [activeCommunity]="community" [is_open]="rules_modal_open" (closeEvent)="listenCloseEvent($event)"></app-rule-modal>
+</ng-template>
+

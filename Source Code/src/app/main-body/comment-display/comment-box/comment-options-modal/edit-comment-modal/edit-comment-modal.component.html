@@ -1,0 +1,10 @@
+<dialog id="edit_comment_modal" class="modal" [open]="is_open">
+    <div class="user_box">
+        <span class="close" (click)="close_modal()">&times;</span>
+        <form [formGroup]="edit_comment" (submit) = "edit_comment_submit($event)" id="edit_sheet">
+            <label>Edit Comment</label>
+            <input type="text" id="edit_comment_body_input" formControlName="text" placeholder="Enter comment body..." value="{{comment.text}}">
+            <input type="submit" class = "close" value="Edit">
+        </form>
+    </div>
+</dialog>

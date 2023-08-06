@@ -1,0 +1,11 @@
+<dialog id="community_rule_modal" class="modal" [open]="is_open">
+    <div class="user_box" id = 'community_rule_box'>
+        <span class="close" (click)="close_modal()">&times;</span>
+        <div class="community_about_content">
+            <h2>Community Rules</h2>
+            <ul>
+                <li *ngFor="let rule of activeCommunity.rules; index as i">Rule {{i + 1}}: {{rule}}</li>
+            </ul>
+        </div>
+    </div>
+</dialog>

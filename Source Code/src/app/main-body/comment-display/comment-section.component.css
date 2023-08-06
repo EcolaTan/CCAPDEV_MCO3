@@ -1,0 +1,19 @@
+#comments_section {
+    margin-top: 30px;
+}
+
+#submit_comment {
+    margin-top: 30px;
+}
+
+#submit_comment textarea {
+    width: 850px;
+    height: 100px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    resize: vertical;
+    font-weight: 400;
+}

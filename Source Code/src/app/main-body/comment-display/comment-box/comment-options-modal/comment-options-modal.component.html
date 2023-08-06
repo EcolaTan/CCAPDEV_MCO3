@@ -1,0 +1,5 @@
+<div class="comment_options">
+    <button class="edit_comment" (click)="open_edit_comment()">Edit Comment</button>
+    <app-edit-comment-modal [is_open]="edit_comment_modal_open" [comment]="comment" (closeOptions)="listenOptionClose($event)" (closeEvent)="listenCloseEvent($event)" (editEvent)="listenEditEvent($event)"></app-edit-comment-modal>
+    <button class="delete_comment" (click)="delete()">Delete Comment</button>
+</div>

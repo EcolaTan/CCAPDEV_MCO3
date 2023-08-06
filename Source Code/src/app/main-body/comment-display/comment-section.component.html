@@ -1,0 +1,14 @@
+<div id="comments_section" *ngIf="comment_list">
+    <div id="submit_comment" *ngIf="activeUser">
+        <textarea id="body_input" [(ngModel)]="input" placeholder="Write your comment..."></textarea>
+        <br><input type="submit" value="Comment" (click)="new_comment()">
+    </div>
+    <h2>Comments</h2>
+    <div *ngIf="level > 0">
+        <button (click)="manualReloadDisplay()">Go Back to Main</button>
+    </div>
+
+    <div *ngFor="let comment of comment_list">
+        <app-comment-box [level]="level" [comment]="comment" (deleteRelay)="reloadDisplay($event)" (viewEvent)="refreshDisplay($event)"></app-comment-box>
+    </div>
+</div>

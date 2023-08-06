@@ -1,0 +1,10 @@
+<dialog id="reply_modal" class="modal" [open] = "is_open">
+    <div class="user_box">
+        <span class="close" (click)="close_modal()">&times;</span>
+        <form [formGroup]="reply" (submit)="reply_submit($event)">
+            <label>Create Reply</label>
+            <input type="text" id="reply_input" formControlName="body" placeholder="Enter Reply..." required>
+            <input type="submit" value="Reply">
+        </form>
+    </div>
+</dialog>

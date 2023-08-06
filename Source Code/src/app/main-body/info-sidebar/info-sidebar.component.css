@@ -1,0 +1,57 @@
+:host {
+    background-color: var(--sidebar_bg_color);
+    color: var(--sidebar_color);
+    flex: 1 1 0;
+    margin-top: 0;
+    min-height: 93vh;
+    min-width: 10vw;
+    padding-top: 1px;
+}
+
+.community_about_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+}
+  
+  
+.community_about_button:hover{
+    background-color: #797979;
+}
+
+.community_about_content{
+    padding-top: 5%;
+}
+
+.community_about_box{
+    height: auto;
+}
+
+#join_button{
+    background-color: var(--login_button_bg_color);
+}
+
+#join_button:hover{
+    background-color: white;
+    color: var(--login_button_bg_color);
+    border: 1px var(--login_button_bg_color) solid;
+}
+
+#leave_button{
+    background-color: red;
+}
+
+#leave_button:hover{
+    background-color: white;
+    color: red;
+    border: 1px red solid;
+}

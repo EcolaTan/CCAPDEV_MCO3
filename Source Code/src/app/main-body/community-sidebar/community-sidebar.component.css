@@ -1,0 +1,50 @@
+:host {
+    background-color: var(--sidebar_bg_color);
+    color: var(--sidebar_color);
+    flex: 1 1 0;
+    margin-top: 0;
+    min-height: 93vh;
+    min-width: 10vw;
+    padding-top: 1px;
+}
+
+.community-link {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+  
+.community-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+}
+  
+.community-button:hover{
+    background-color: #797979;
+}
+  
+.com_pic {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    padding-left: 2%;
+}
+
+.com_word {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 16px;
+    color: white;
+    text-align: justify;
+    padding-left: 5%;
+}

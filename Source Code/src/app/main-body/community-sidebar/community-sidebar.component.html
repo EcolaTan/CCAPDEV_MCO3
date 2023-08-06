@@ -1,0 +1,13 @@
+<div class="com_word">
+    <p>Communities</p>
+</div>
+<div *ngIf="communities">
+    <div *ngFor="let community of communities">
+        <a [routerLink]="['/community', community._id, 1]" class="community-link" id="{{community.name}}_link">
+            <button id="{{community.name}}_button" class="community-button">
+                <img class="com_pic" src="assets/Community Icons/{{community.icon}}">
+                <p>{{community.name}}</p>
+            </button>
+        </a>
+    </div>
+</div>
