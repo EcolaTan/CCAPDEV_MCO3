@@ -203,7 +203,7 @@ export class CommentBoxComponent implements OnInit {
     }
 
     goToUserProfile() {
-        this.router.navigateByUrl('/user/'+this.comment.poster._id)
+        this.router.navigateByUrl('view/user/'+this.comment.poster._id)
     }
 
     viewMore() {
