@@ -1,0 +1,12 @@
+<app-header-bar></app-header-bar>   
+<main id="forum_body" *ngIf="communities && posts && community">
+    <app-community-sidebar [communities]="communities" [activeUser]="activeUser"></app-community-sidebar>
+    <div id = "no_res_container" *ngIf="no_results; else hasResults">
+        <div id = "no_res">No Results for {{query}}</div>
+    </div>
+    <ng-template #hasResults>
+        <app-search-page-post-feed [posts]="posts" [count]="count" [page]="page" [query]="query"></app-search-page-post-feed>
+    </ng-template>
+    <app-info-sidebar [community]="community"></app-info-sidebar>
+</main>
+<app-footer-bar></app-footer-bar>

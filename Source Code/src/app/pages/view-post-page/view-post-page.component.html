@@ -1,0 +1,7 @@
+<app-header-bar></app-header-bar>
+<main id="forum_body">
+    <app-community-sidebar [communities]="communities" [activeUser]="activeUser"></app-community-sidebar>
+    <app-view-post [community]="community" [commentList]="commentList" [loadedPost]="loadedPost"></app-view-post>
+    <app-info-sidebar [community]="community" [activeUser]="activeUser"></app-info-sidebar>
+</main>
+<app-footer-bar></app-footer-bar>

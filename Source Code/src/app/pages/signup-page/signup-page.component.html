@@ -1,0 +1,9 @@
+<div class="user_box">
+    <ng-template [ngIf]="displayed === 0" [ngIfElse]="login">
+        <app-signup-form (swapEvent)="swapDisplay($event)"></app-signup-form>
+    </ng-template>
+
+    <ng-template #login>
+        <app-login-form (swapEvent)="swapDisplay($event)"></app-login-form>
+    </ng-template>
+</div>

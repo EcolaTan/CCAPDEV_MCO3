@@ -1,0 +1,15 @@
+<app-header-bar></app-header-bar>
+<main id="forum_body">
+    <div id="main_section" *ngIf="loadedUser">
+        <app-profile-section [loadedUser]="loadedUser" (changeActive)="listenSwap($event)"></app-profile-section>
+        
+        <ng-template [ngIf]="activeTab === 0 && postList && postCount !== undefined">
+            <app-profile-posts [postList]="postList" [loadedUser]="loadedUser" [count]="postCount"></app-profile-posts>
+        </ng-template>
+
+        <ng-template [ngIf]="activeTab === 1 && commentList && commentCount !== undefined">
+            <app-profile-comments [commentList]="commentList" [loadedUser]="loadedUser" [count]="commentCount"></app-profile-comments>
+        </ng-template>
+    </div>
+</main>
+<app-footer-bar></app-footer-bar>

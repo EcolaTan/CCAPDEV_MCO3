@@ -1,0 +1,15 @@
+<app-header-bar></app-header-bar>
+<main id="body">
+    <ng-template [ngIf]="activeUser" [ngIfElse]="Unauthorized">
+        <app-user-settings-form [activeUser]="activeUser"></app-user-settings-form>
+    </ng-template>
+    
+    <ng-template #Unauthorized>
+        <app-unauthorized></app-unauthorized>
+    </ng-template>
+</main>
+<app-footer-bar></app-footer-bar>
+    
+    
+
+  

@@ -1,0 +1,7 @@
+<app-header-bar></app-header-bar>
+<main id="forum_body" *ngIf="communities && posts !== undefined && community !== undefined && page && count !== undefined">
+    <app-community-sidebar [communities]="communities" [activeUser]="activeUser"></app-community-sidebar>
+    <app-homepage-post-feed [posts]="posts" [page]="page" [count]="count" (sortEvent)="changeSort($event)"></app-homepage-post-feed>
+    <app-info-sidebar [community]="community" [activeUser]="activeUser"></app-info-sidebar>
+</main>
+<app-footer-bar></app-footer-bar>
