@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --header_footer_bg_color: black;
+    --username_text_color: white;
+    --profile_options_bg_color: white;
+    --profile_opt_button_bg_color: #fdfdfd;
+    --profile_opt_button_color: #333;
+    --profile_opt_button_hover_color: #ddd;
+    --login_button_bg_color: #04AA6D;
+    --login_button_color: white;
+    --login_button_hover_color: #05d88b;
+    --modal_bg_color: rgba(0, 0, 0, 0.4);
+    --modal_content_bg_color: #fff;
+    --modal_content_form_color: black;
+    --close_button_color: #999;
+    --close_action: black;
+    --submit_bg_color: #04AA6D;
+    --submit_color: #fff;
+    --submit_hover: #05d88b;
+    --login_box_shadow_color: rgba(0, 0, 0, 0.5);
+    --text_input_bg_color: #f0f0f0;
+    --footer_text_color: white;
+    --link_hover:#04AA6D;
+    --subtext_color: #999;
+    --border_color: #999;
+    --stat_asset_color: #999;
+    --post_info_color: #05d88b;
+    --not_quite_black: #303030;
+    --sidebar_bg_color: #2e5a4a;
+    --sidebar_color: black;
+    --profile_section_bg_color: white;
+    --main_section_bg_color: #05d88b;
+    
+
+    font-family: 'Amaranth', 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal_bg_color);
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--close_button_color);
+}
+  
+.close:hover, .close:focus {
+    color: var(--close_action);
+    text-decoration: none;
+}
+
+#sign_instead,
+#login_instead {
+    text-align: center;
+    user-select: none;
+}
+
+.modal_content {
+    background-color: var(--modal_content_bg_color);
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.modal_content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--modal_content_form_color);
+}
+
+form {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    padding: 50px;
+}
+
+form h2 {
+    text-align: center;
+    user-select: none;
+}
+
+form input[type="text"],
+input[type="password"] {
+    background-color: var(--text_input_bg_color);
+    height: 5vh;
+    border-radius: 9px;
+    border-width: 0;
+    padding: 5px;
+    user-select: none;
+}
+
+input[type="submit"] {
+    background-color: var(--submit_bg_color);
+    color: var(--submit_color);
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 5vh;
+    border-radius: 9px;
+    border-width: 0;
+    user-select: none;
+}
+
+.user_box {
+    width: 50vh;
+    border-radius: 9px;
+    border: 3px ;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px var(--user_box_shadow_color);
+    margin: auto;
+    margin-top: 70px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--submit_hover);
+}
+
+#forum_body {
+    display: flex;
+    flex: 1 0 auto;
+}
