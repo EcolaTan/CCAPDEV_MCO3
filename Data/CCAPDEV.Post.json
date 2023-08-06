@@ -1,0 +1,86 @@
+[{
+    "_id": "CCS_1",
+    "community": "CCS",
+    "title": "CSINTSY vs CSALGCM vs CCINFOM",
+    "body": "I'm taking these subjects next term and I just want to know which subject has a lot of workload, requires more focus, etc.",
+    "poster": "EuniqueLife",
+    "upvotes": 2,
+    "upvoters": ["coffee_addict", "animoArchier"],
+    "downvotes": 0,
+    "downvoters": [],
+    "comments": 1,
+    "commenters": ["coffee_addict"],
+    "postDate": {
+        "$date":"2023-03-24T09:45:00.000Z"
+    },
+    "edited": false
+  },
+  {
+    "_id": "General_1",
+    "community": "General",
+    "title": "can i really not pet the DLSU cats :(",
+    "body": "whenever i eat lunch near bloemen, many cats approach me and they are all so very very cute. can i really not pet them? they're so CUTE!! i cannnot resist their meows!!!!!",
+    "poster": "curious_cat",
+    "upvotes": 4,
+    "upvoters": ["EuniqueLife", "coffee_addict", "animoArchier", "WebWanderer"],
+    "downvotes": 0,
+    "downvoters": [],
+    "comments": 2,
+    "commenters": ["EuniqueLife", "coffee_addict"],
+    "postDate": {
+        "$date":"2023-01-19T09:45:00.000Z"
+    },
+    "edited": false
+  },
+  {
+    "_id": "General_2",
+    "community": "General",
+    "title": "Budget Tips pls!",
+    "body": "i'll be staying in a condo near campus for the rest of my college life. pls share budget tips. i don't wanna be broke :(",
+    "poster": "coffee_addict",
+    "upvotes": 1,
+    "upvoters": ["animoArchier"],
+    "downvotes": 0,
+    "downvoters": [],
+    "comments": 1,
+    "commenters": ["animoArchier"],
+    "postDate": {
+        "$date":"2022-09-21T09:45:00.000Z"
+    },
+    "edited": false
+  },
+  {
+    "_id": "GCOE_1",
+    "community": "GCOE",
+    "title": "Should I change my degree program?",
+    "body": "Hi friends. I am currently a 3rd year Civil Engineering student. I'll just say it straight out. I'm not enjoying my course. Although I haven't failed anything yet, I just don't see myself doing this in the future. I'm not happy right now. In fact, this course bores me. It's really difficult, and whenever I get a good grade . . . I feel nothing. I feel that I would be much happier in a course I actually want to be in? How do I proceed with this? I'm afraid of disappointing my parents. Wasting 2 years of Civil Eng seems very . . . wrong. What should I do? Help me out.",
+    "poster": "WebWanderer",
+    "upvotes": 2,
+    "upvoters": ["coffee_addict", "curious_cat"],
+    "downvotes": 0,
+    "downvoters": [],
+    "comments": 2,
+    "commenters": ["coffee_addict", "curious_cat"],
+    "postDate": {
+        "$date":"2023-02-10T09:45:00.000Z"
+    },
+    "edited": false
+  },
+  {
+    "_id": "COB_1",
+    "community": "COB",
+    "title": "Seeking Tips for Incoming Accountancy Student",
+    "body": "Hey guys! My sister's an incoming accountancy student, and I just wanna know if any of you've got juicy advice or tips for this freshman right here (my sister!).",
+    "poster": "curious_cat",
+    "upvotes": 2,
+    "upvoters": ["animoArchier", "coffee_addict"],
+    "downvotes": 0,
+    "downvoters": [],
+    "comments": 1,
+    "commenters": ["coffee_addict"],
+    "postDate": {
+        "$date":"2023-07-21T09:45:00.000Z"
+    },
+    "edited": false
+  }
+]
