@@ -27,23 +27,13 @@ var postIndex = -1
 var commentIndex = -1
 var indexerId
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", 
-               "http://localhost:3000");
-    res.header("Access-Control-Allow-Headers", 
-               "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, PATCH, DELETE")
-
-    next();
-});
-
 const server = app.listen(port, () => {
     console.log("Server ready")
 })
 
 let closeDetected = false
 
-mongoose.connect(mongo)
+mongoose.connect(mongo, { dbName: 'CCAPDEV'})
     .then(async () => {
         console.log('Connected to MongoDB!')
         const indices = await Counter.findOne({})
