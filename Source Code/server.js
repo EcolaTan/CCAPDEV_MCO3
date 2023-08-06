@@ -109,11 +109,12 @@ app.get('/comment/user/:user/:page', async (req, res) => {
 app.get('/comment/post/:post', async (req, res) => {
     try {
         var data = await Comment.find({parentPostId: req.params.post, layer: 1})
-            .populate('poster')
+            .populate('poster', '-password')
             .populate({
                 path: 'replies',
                 populate: {
-                    path: 'poster replies'
+                    path: 'poster replies',
+                    select: '-password'
                 }
             })
             .populate('parentPostId')
@@ -123,11 +124,12 @@ app.get('/comment/post/:post', async (req, res) => {
         for(const rootComment of data) {
             for(const reply1 of rootComment.replies) {
                 reply1.replies = await Comment.find({replyingTo: reply1})
-                    .populate('poster')
+                    .populate('poster', '-password')
                     .populate({
                         path: 'replies',
                         populate: {
-                            path: 'poster replies'
+                            path: 'poster replies',
+                            select: '-password'
                         }
                     })
                     .populate('parentPostId')
@@ -144,11 +146,12 @@ app.get('/comment/post/:post', async (req, res) => {
 app.get('/comment/post/viewComment/:comment', async (req, res) => {
     try {
         var data = await Comment.findById(req.params.comment)
-            .populate('poster')
+            .populate('poster', '-password')
             .populate({
                 path: 'replies',
                 populate: {
-                    path: 'poster replies'
+                    path: 'poster replies',
+                    select: '-password'
                 }
             })
             .populate('parentPostId')
@@ -157,11 +160,12 @@ app.get('/comment/post/viewComment/:comment', async (req, res) => {
         //Get replies of replies
         for(const reply1 of data.replies) {
             reply1.replies = await Comment.find({replyingTo: reply1})
-                .populate('poster')
+                .populate('poster', '-password')
                 .populate({
                     path: 'replies',
                     populate: {
-                        path: 'poster replies'
+                        path: 'poster replies',
+                        select: '-password'
                     }
                 })
                 .populate('parentPostId')
@@ -178,7 +182,7 @@ app.get('/comment/post/viewComment/:comment', async (req, res) => {
 app.get('/reload/comment/:comment', async (req, res) => {
     try {
         const data = await Comment.findById(req.params.comment)
-            .populate('poster')
+            .populate('poster', '-password')
         res.status(200).json(data)
     } catch(error) {
         res.status(500).send()
@@ -207,7 +211,7 @@ app.patch('/comment/reply/:comment', async (req, res) => {
         await Comment.findByIdAndUpdate(req.params.comment, parent, {new: true})
         commentIndex++
         await Counter.findByIdAndUpdate(indexerId, {'commentIndex': commentIndex})
-        const data = await Comment.findById(temp.id).populate('poster')
+        const data = await Comment.findById(temp.id).populate('poster', '-password')
         res.status(200).json(data)
     } catch(error) {
         res.status(500).send()
@@ -356,7 +360,7 @@ app.post('/user', async (req, res) => {
 //Login
 app.post('/login', async (req, res) => {
     try {
-        const data = await User.findById(req.body.userId)
+        const data = await User.findById(req.body.userId, {password: 1})
         const loginSuccess = await bcrypt.compare(req.body.password, data.password)
 
         if(loginSuccess) {            
@@ -465,7 +469,7 @@ app.get('/post/home/:page/:settings', async (req, res) => {
 
         const data = await Post.find({}).skip(parseInt(req.params.page) * 15).limit(15)
             .populate('community')
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('commenters')
             .sort(filter)
 
@@ -480,7 +484,7 @@ app.get('/post/community/:community/:page', async (req, res) => {
     try {
         const data = await Post.find({community: req.params.community}).skip((parseInt(req.params.page) - 1) * 15).limit(15).sort({postDate: 'desc'})
             .populate('community')
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('commenters')
         res.status(200).json(data)
     } catch(error) {
@@ -493,7 +497,7 @@ app.get('/post/user/:user/:page', async (req, res) => {
     try {
         const data = await Post.find({poster: req.params.user})
             .populate('community')
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('commenters')
             .skip((req.params.page - 1) * 15)
             .limit(15)
@@ -511,7 +515,7 @@ app.get('/post/:post', async (req, res) => {
     try {
         const data = await Post.findById(req.params.post)
             .populate('community')
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('commenters')
         res.status(200).json(data)
     } catch(error) {
@@ -570,7 +574,7 @@ app.get('/post/query/:query/:page', async (req, res) => {
         const regex = new RegExp(req.params.query, "gi")
         const data = await Post.find({}).or([{title: regex}, {body: regex}]).skip(parseInt(req.params.page) * 15).limit(15)
             .populate('community')
-            .populate('poster')
+            .populate('poster', '-password')
             .populate('commenters')
         res.status(200).json(data)
     } catch(error) {
@@ -631,7 +635,6 @@ app.post('/user/:username/settings/avatar', avatarUpload.single('file'), (req, r
         res.status(500).json({ message: 'Avatar file upload failed.' });
     }
 });
-
 
 app.get('*.*', express.static(dir))
 app.get('*', (req, res) => {
